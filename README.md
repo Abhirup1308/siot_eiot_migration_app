@@ -69,7 +69,7 @@ For VS Code's editor, use **Python: Select Interpreter** and select `.venv`. Ter
 | EIoT `EIoTMetadataSyncService/v1/TechnicalObjects(...)` | Resolve target `managedObjectId`, `measuringNodeId`, data types, and sync status. |
 | EIoT `FileUploadService` | Upload validation/production Parquet files and check processing results. |
 
-The app calls these services directly from Python. It does not expose its own business REST API. Exact methods, paths, authentication, and response fields are in the [API reference](docs/HANDOVER.md#api-reference).
+The app calls these services directly from Python. It does not expose its own business REST API. Exact methods, paths, authentication, and response fields are in the [API reference](docs/USER_GUIDE.md#api-reference).
 
 ## Overall workflow
 
@@ -83,8 +83,8 @@ The app calls these services directly from Python. It does not expose its own bu
 
 **Validation is a real EIoT upload.** Validation rows are also included in production files. Confirm the tenant's duplicate/overwrite behaviour before loading. A production status of `COMPLETE` means all prepared production files reached `Processed`; it does not prove that every originally requested object was migrated.
 
-## Handover and repository notes
+## User Guide and repository notes
 
-Read [docs/HANDOVER.md](docs/USER_GUIDE.md) for operating instructions, mapping rules, recovery, reports, and implementation limits.
+Read [docs/USER_GUIDE.md](docs/USER_GUIDE.md) for operating instructions, mapping rules, recovery, reports, and implementation limits.
 
 Progress is stored in `data/migration.sqlite3`, with files under `data/runs/<run-id>/`. Preserve both to resume work. The supplied `.gitignore` excludes `.env`, `.venv/`, `data/`, and Python cache files. Commit `.env.example`; keep actual credentials and migration data out of Git.
