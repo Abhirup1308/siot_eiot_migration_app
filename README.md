@@ -85,6 +85,6 @@ The app calls these services directly from Python. It does not expose its own bu
 
 ## Handover and repository notes
 
-Read [docs/HANDOVER.md](docs/HANDOVER.md) for operating instructions, mapping rules, recovery, reports, and implementation limits.
+Read [docs/HANDOVER.md](docs/USER_GUIDE.md) for operating instructions, mapping rules, recovery, reports, and implementation limits.
 
 Progress is stored in `data/migration.sqlite3`, with files under `data/runs/<run-id>/`. Preserve both to resume work. The supplied `.gitignore` excludes `.env`, `.venv/`, `data/`, and Python cache files. Commit `.env.example`; keep actual credentials and migration data out of Git.
